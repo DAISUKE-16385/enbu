@@ -8,12 +8,17 @@
 </head>
 <body>
     <div id="header-include"></div>
+    <script src="nav.js"></script>
     <script>
     // header.htmlを読み込んで挿入
     fetch('header.html')
       .then(res => res.text())
       .then(data => {
         document.getElementById('header-include').innerHTML = data;
+        // Initialize navigation after header is loaded
+        if (typeof initNavigation === 'function') {
+          initNavigation();
+        }
       });
     </script>
     <div class="container">
