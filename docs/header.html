@@ -5,23 +5,23 @@
         <ul class="nav-menu">
             <li><a href="index.html">トップ</a></li>
             <li>
-                <div class="dropdown">
-                    <a href="#" class="dropbtn">大将評価</a>
-                    <div class="dropdown-content">
-                        <a href="raid.html">レイド</a>
-                        <a href="kassen.html">合戦</a>
+                    <div class="dropdown">
+                        <span class="dropbtn">大将評価</span>
+                        <div class="dropdown-content">
+                            <a href="raid.html">レイド</a>
+                            <a href="kassen.html">合戦</a>
+                        </div>
                     </div>
-                </div>
             </li>
             <li>
-                <div class="dropdown">
-                    <a href="#" class="dropbtn">公開データ</a>
-                    <div class="dropdown-content">
-                        <a href="ougi.html">奥義</a>
-                        <a href="skill.html">スキル</a>
-                        <a href="other.html">その他</a>
+                    <div class="dropdown">
+                        <span class="dropbtn">公開データ</span>
+                        <div class="dropdown-content">
+                            <a href="ougi.html">奥義</a>
+                            <a href="skill.html">スキル</a>
+                            <a href="other.html">その他</a>
+                        </div>
                     </div>
-                </div>
             </li>
             <li><a href="contact.html">お問い合わせ</a></li>
         </ul>
@@ -111,6 +111,10 @@
     }
     
     @media (max-width: 768px) {
+            .dropdown {
+                width: 100%;
+                position: static;
+            }
         .mobile-menu-toggle {
             display: block;
         }
@@ -143,20 +147,16 @@
         }
         .dropdown-content {
             position: static;
-            display: none;
             box-shadow: none;
             background: #333;
+            display: none !important;
         }
         .dropdown.open .dropdown-content {
-            display: block;
+            display: block !important;
         }
         .dropbtn {
-            width: 100%;
+            width: 75%;
             text-align: left;
-        }
-        /* hoverでは表示しない */
-        .dropdown:hover .dropdown-content {
-            display: none !important;
         }
     }
     </style>
@@ -179,18 +179,17 @@
                 btn.addEventListener('click', function(e){
                     if(window.innerWidth <= 768){
                         e.preventDefault();
-                        drop.classList.toggle('open');
+                        if (drop.classList.contains('open')) {
+                            drop.classList.remove('open');
+                        } else {
+                            // 他のdropdownのopenを外す
+                            dropdowns.forEach(function(d){
+                                if (d !== drop) d.classList.remove('open');
+                            });
+                            drop.classList.add('open');
+                        }
                     }
                 });
-            }
-        });
-        // メニュー外をタップしたら閉じる
-        document.addEventListener('click', function(e){
-            if(window.innerWidth <= 768 && menu && menu.classList.contains('active')){
-                if(!menu.contains(e.target) && !toggle.contains(e.target)){
-                    menu.classList.remove('active');
-                    dropdowns.forEach(function(drop){drop.classList.remove('open');});
-                }
             }
         });
     })();
