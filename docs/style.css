@@ -9,8 +9,8 @@
 @media (max-width: 600px) {
     .table-scroll img,
     table img {
-        width: 45px !important;
-        height: 45px !important;
+        width: 42px !important;
+        height: 42px !important;
     }
 }
 @media (min-width: 601px) {
@@ -184,7 +184,7 @@ h3.section-title {
 }
 /* 奥義ページ用 目次・著作権CSS */
 .copyright {
-    font-size: 12px;
+    font-size: 10px;
     color: #888;
     text-align: right;
     margin-top: 4px;
