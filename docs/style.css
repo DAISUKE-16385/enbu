@@ -14,17 +14,21 @@
     }
 }
 @media (min-width: 601px) {
+    .details th.col1, .details td.col1,
+    .border th.col1, .border td.col1,
     table[name="A"] th.col1, table[name="A"] td.col1,
     table[name="B"] th.col1, table[name="B"] td.col1,
     table[name="C"] th.col1, table[name="C"] td.col1 {
-        width: 40px !important;
-        min-width: 40px !important;
+        width: 100px !important;
+        min-width: 100px !important;
     }
+    .details th.col2, .details td.col2,
+    .border th.col2, .border td.col2,
     table[name="A"] th.col2, table[name="A"] td.col2,
     table[name="B"] th.col2, table[name="B"] td.col2,
     table[name="C"] th.col2, table[name="C"] td.col2 {
-        min-width: 180px !important;
-        width: 180px !important;
+        min-width: 500px !important;
+        width: 500px !important;
     }
 }
 @media (min-width: 601px) {
@@ -36,20 +40,22 @@
     }
 }
 @media (max-width: 600px) {
-                /* スマホ用テーブル列幅 - 評価・補足テーブル基準 */
-                .details th.col1, .details td.col1,
-                .border th.col1, .border td.col1,
+    /* スマホ用テーブル列幅 - 評価基準・ABCテーブル統一 */
+    .details th.col1, .details td.col1,
+    .border th.col1, .border td.col1,
     table[name="A"] th.col1, table[name="A"] td.col1,
     table[name="B"] th.col1, table[name="B"] td.col1,
     table[name="C"] th.col1, table[name="C"] td.col1 {
-        width: 32px !important;
-        min-width: 32px !important;
+        width: 70px !important;
+        min-width: 70px !important;
     }
+    .details th.col2, .details td.col2,
+    .border th.col2, .border td.col2,
     table[name="A"] th.col2, table[name="A"] td.col2,
     table[name="B"] th.col2, table[name="B"] td.col2,
     table[name="C"] th.col2, table[name="C"] td.col2 {
-        min-width: 80px !important;
-        width: 80px !important;
+        min-width: 200px !important;
+        width: 200px !important;
     }
     .table-scroll {
         overflow-x: auto;
@@ -204,6 +210,7 @@ main {
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.06);
 }
+
 .toc h3 {
     margin-top: 0;
     color: #222;
@@ -414,41 +421,4 @@ footer {
         padding: 4px 8px;
         touch-action: manipulation;
     }
-    
-    /* テーブル列幅をスマホ用に調整 */
-    .details th.col1, .details td.col1,
-    .border th.col1, .border td.col1,
-    table[name="A"] th.col1, table[name="A"] td.col1,
-    table[name="B"] th.col1, table[name="B"] td.col1,
-    table[name="C"] th.col1, table[name="C"] td.col1 {
-           width: 32px;
-           min-width: 32px;
-    }
-    .details th.col2, .details td.col2,
-    .border th.col2, .border td.col2,
-    table[name="A"] th.col2, table[name="A"] td.col2,
-    table[name="B"] th.col2, table[name="B"] td.col2,
-    table[name="C"] th.col2, table[name="C"] td.col2 {
-           min-width: 48px;
-           width: 48px;
-}
-}
-/* details/borderテーブルの列幅個別指定 */
-.details th.col1, .details td.col1,
-/* PC用テーブル列幅（601px以上） */
-.details th.col1, .details td.col1,
-.border th.col1, .border td.col1,
-table[name="A"] th.col1, table[name="A"] td.col1,
-table[name="B"] th.col1, table[name="B"] td.col1,
-table[name="C"] th.col1, table[name="C"] td.col1 {
-    width: 40px;
-    min-width: 40px;
-}
-.details th.col2, .details td.col2,
-.border th.col2, .border td.col2,
-table[name="A"] th.col2, table[name="A"] td.col2,
-table[name="B"] th.col2, table[name="B"] td.col2,
-table[name="C"] th.col2, table[name="C"] td.col2 {
-    min-width: 120px;
-    width: 120px;
 }
