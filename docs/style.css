@@ -103,7 +103,7 @@ main {
     padding: 7px 0;
     border-right-width: 0;
     transition: background 0.2s;
-    width: 350px;
+    width: 300px;
     text-align: left;
 /* 最後のliの区切り線を消す */
 }
